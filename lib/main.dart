@@ -11,6 +11,8 @@ class MyApp extends StatelessWidget {
     final ThemeData theme = ThemeData();
     return MaterialApp(
       darkTheme: ThemeData(
+        fontFamily: 'IBM Plex Sans',
+        
         brightness: Brightness.dark,
       ),
       debugShowCheckedModeBanner: false,
