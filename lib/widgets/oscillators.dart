@@ -209,20 +209,13 @@ class Oscillator extends StatelessWidget {
                   ),
                 ),
                 Text('-53.6549'),
-                SizedBox(
-                  width: 5,
-                ),
                 Container(
-                  width: 65,
                   child: Text(
-                    'LESS VOLATILE',
+                    '\t\t\t\t\t\t\t\tLESS \nVOLATAILE',
                     style: TextStyle(color: Colors.grey),
                   ),
                 ),
               ],
-            ),
-            SizedBox(
-              height: 20,
             ),
           ],
         ));

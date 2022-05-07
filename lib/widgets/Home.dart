@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import './chart.dart';
 import './average.dart';
 import './oscillators.dart';
+import './pivot.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -27,7 +28,7 @@ class MyHomePage extends StatelessWidget {
           children: <Widget>[
             Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10), 
+                borderRadius: BorderRadius.circular(10),
                 color: Color(0xff121212),
               ),
               margin: const EdgeInsets.only(top: 10, left: 15, right: 10),
@@ -435,6 +436,64 @@ class MyHomePage extends StatelessWidget {
               height: 20,
             ),
             Oscillator(),
+            SizedBox(
+              height: 20,
+            ),
+            //----------------------------------------------------------------------
+            Container(
+              height: 35,
+              width: double.infinity,
+              margin: const EdgeInsets.all(50),
+              child: const Center(
+                child: Text(
+                  "Pivot Points",
+                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 25),
+                ),
+              ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Color(0xff121212),
+              ),
+              margin: const EdgeInsets.only(left: 100, right: 100),
+              // width: 154,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    "Classic",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: 'IBM Plex Sans',
+                        fontWeight: FontWeight.w400,
+                        fontSize: 20),
+                  ),
+                  DropdownButton<String>(
+                    icon: const Icon(
+                      Icons.keyboard_arrow_down,
+                      color: Colors.white,
+                    ),
+                    elevation: 16,
+                    underline: Container(
+                      height: 2,
+                    ),
+                    onChanged: (newValue) {},
+                    items: <String>['preview1', 'preview2']
+                        .map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            PivotPoint(),
           ],
         ),
       ),
